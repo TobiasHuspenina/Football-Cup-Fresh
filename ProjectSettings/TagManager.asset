@@ -4,14 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Player1
-  - Player2
-  - Mic
   - Freeze
+  - Player2
   - Brana1
+  - Mic
   - Brana2
-  - AI
-  - Border
+  - Player1
   layers:
   - Default
   - TransparentFX
@@ -19,10 +17,10 @@ TagManager:
   - 
   - Water
   - UI
-  - "Hr\xE1\u010Di"
-  - Border
-  - "M\xED\u010D"
-  - Brana
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -50,11 +48,11 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Background
-    uniqueID: 2112069121
+    uniqueID: 568045457
     locked: 0
   - name: GameObject
-    uniqueID: 2681964155
+    uniqueID: 1767946851
     locked: 0
   - name: Canvas
-    uniqueID: 3062589079
+    uniqueID: 2515436059
     locked: 0
