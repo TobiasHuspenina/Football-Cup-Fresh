@@ -38,7 +38,7 @@ public class Kop : MonoBehaviour
     {
         wasKicked = true;
 
-        float rotationAngle = 10f; // Nastavte úhel otočení
+        float rotationAngle = 0f; // Nastavte úhel otočení
 
         // Zjištění směru otočení na základě posledního pohybu
         if (playerDirection.currentDirection == Pozice.Direction.Left)
@@ -65,7 +65,6 @@ public class Kop : MonoBehaviour
         yield return new WaitForSeconds(0.1f); // Doba, po kterou se považuje míč za kopnutý
 
         wasKicked = false; 
-        Debug.Log(kickStrength);
     }
 
     

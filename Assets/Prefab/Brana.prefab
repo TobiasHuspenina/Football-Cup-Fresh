@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7335923292525736634}
   - component: {fileID: 5281253671146610330}
   - component: {fileID: 1966380811199810140}
-  - component: {fileID: 8007839262377317137}
+  - component: {fileID: 1012787099424598737}
   m_Layer: 9
   m_Name: CheckBox1
   m_TagString: Untagged
@@ -134,7 +134,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8007839262377317137
+--- !u!114 &1012787099424598737
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8784766728915811042}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62ce1b2b5246faa4095f3ae39d46e0b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f16ee6914b02b1429809d7893346831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   countdownText: {fileID: 0}
