@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1825191874064152116}
   - component: {fileID: 5645197343071895632}
   - component: {fileID: 5348880856707785193}
-  - component: {fileID: 4754496704910360831}
-  - component: {fileID: 2237592918949119942}
+  - component: {fileID: 8281547070116931226}
+  - component: {fileID: 6550641126240681808}
   m_Layer: 5
   m_Name: Mic
   m_TagString: Mic
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 1767946851
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9e8115b005f4a3345aa95d60f834d423, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d5cc661c0628ef44aad92a8cb3c34e61, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -153,7 +153,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4754496704910360831
+--- !u!114 &8281547070116931226
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,20 +162,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 2038527160347694019}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d018d8c18f9616459bacf437b5386c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentDirection: 1
---- !u!114 &2237592918949119942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2038527160347694019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3957afba34e5e164e8245eead04875d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 6509c9e018c2e434cb0e1d29025643de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+--- !u!114 &6550641126240681808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038527160347694019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 212d895f3821ee74abc1623f68335cc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentDirection: 1

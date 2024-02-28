@@ -9,9 +9,9 @@ public class Cas : MonoBehaviour
 {
     float currentTime;
     public float startingTime = 60f;
-    public TMP_Text text1;
-    public TMP_Text text2;
-    public TMP_Text text3;
+    public TMP_Text cas;
+    public TMP_Text away;
+    public TMP_Text home;
 
     void Start()
     {
@@ -21,17 +21,17 @@ public class Cas : MonoBehaviour
     {
 
         currentTime += -1 * Time.deltaTime;
-        text1.text = Mathf.Round (currentTime) +"";
+        cas.text = Mathf.Round (currentTime) +"";
         if (currentTime <= 10)
         {
-            text1.color = Color.red;
+            cas.color = Color.red;
         }
 
         if(currentTime <= 0){
             currentTime = 0;
-             text1.text = "0";
-             int num1 = int.Parse(text2.text);//Player2
-             int num2 = int.Parse(text3.text);//Player1
+             cas.text = "0";
+             int num1 = int.Parse(away.text);//Player2
+             int num2 = int.Parse(home.text);//Player1
         
         if (num1 > num2) //Player2 vyhrál
         {
@@ -43,7 +43,7 @@ public class Cas : MonoBehaviour
         }
         else //Remíza
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(5);
          }
         }
     }

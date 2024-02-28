@@ -15,7 +15,7 @@ public class FyzikaMice : MonoBehaviour
     }
 
 
-    void OnCollisionEnter2D(Collision2D collision)
+    /*void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player1"))
         {
@@ -43,7 +43,7 @@ public class FyzikaMice : MonoBehaviour
                 rb.velocity = Vector2.zero;
             }
         }
-    }
+    }*/
     
     public void SetDefaultPosition()
     {
