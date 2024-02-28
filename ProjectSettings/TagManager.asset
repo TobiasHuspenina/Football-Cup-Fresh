@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Player1
+  - Player2
+  - Mic
+  - Freeze
+  - Brana1
+  - Brana2
+  - AI
+  - Border
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - "Hr\xE1\u010Di"
+  - Border
+  - "M\xED\u010D"
+  - Brana
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2112069121
+    locked: 0
+  - name: GameObject
+    uniqueID: 2681964155
+    locked: 0
+  - name: Canvas
+    uniqueID: 3062589079
+    locked: 0
