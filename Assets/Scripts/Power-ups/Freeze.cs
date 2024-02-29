@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Freeze : MonoBehaviour
 {
-     public float freezeTime = 5f; // Doba, po kterou bude druhý hráč zmrazen
+    public float freezeTime = 5f; // Doba, po kterou bude druhý hráč zmrazen
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

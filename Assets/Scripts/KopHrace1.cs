@@ -7,7 +7,7 @@ public class KopHrace1 : MonoBehaviour
     public GameObject mic; // Reference na míč
     private float distance;
     private Rigidbody2D micRigidbody; // Rigidbody míče pro aplikaci síly
-    public int ShootPower = 18;
+    public float ShootPower = 18;
 
     public Direction currentDirection = Direction.Right; // Výchozí směr
 
