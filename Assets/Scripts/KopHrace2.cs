@@ -7,6 +7,7 @@ public class KopHrace2 : MonoBehaviour
     public GameObject mic; // Reference na míč
     private float distance;
     private Rigidbody2D micRigidbody; // Rigidbody míče pro aplikaci síly
+    public int ShootPower = 18;
 
     public Direction currentDirection = Direction.Right; // Výchozí směr
 
@@ -57,7 +58,7 @@ public class KopHrace2 : MonoBehaviour
         kickDirection.Normalize(); // Normalizujeme vektor pro konzistentní velikost síly
         if (micRigidbody != null) // Zkontrolujte, zda má míč Rigidbody2D
         {
-            micRigidbody.AddForce(kickDirection * 18, ForceMode2D.Impulse); // Aplikujeme sílu
+            micRigidbody.AddForce(kickDirection * ShootPower, ForceMode2D.Impulse); // Aplikujeme sílu
         }
     }
 
