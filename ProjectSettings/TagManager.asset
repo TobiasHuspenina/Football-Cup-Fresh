@@ -10,6 +10,7 @@ TagManager:
   - Mic
   - Brana2
   - Player1
+  - Border
   layers:
   - Default
   - TransparentFX

@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class AI : MonoBehaviour
 {
-    public float speed = 5f; // Rychlost pohybu AI
+    public float speed = 7f;
     public float jumpForce = 10f;
-    public Rigidbody2D ballRigidbody; // Rigidbody míče
-    public float kickStrength = 40f; // Síla kopnutí
-    public float kickRange = 1f; // Dosah, ve kterém může AI kopnout do míče
+    public Rigidbody2D ballRigidbody;
+    public float kickStrength = 18f;
     private Rigidbody2D rb;
-    private Transform ballTransform; // Transform míče
-    private bool isGrounded; // Kontrola, zda je AI na zemi
-    private float kickCooldown = 1f; // Cooldown mezi kopnutími
-    private float lastKickTime = -1f; // Čas posledního kopnutí
+    private Transform ballTransform;
+    private Transform player1Transform; // Transform pro Player1
+    private bool isGrounded;
+    private float kickCooldown = 1f;
+    private float lastKickTime = -1f;
 
     void Start()
     {
@@ -24,41 +24,81 @@ public class AI : MonoBehaviour
             ballTransform = ball.transform;
             ballRigidbody = ball.GetComponent<Rigidbody2D>();
         }
+
+        // Najdeme objekt Player1 a uložíme jeho transform
+        GameObject player1 = GameObject.FindGameObjectWithTag("Player1");
+        if (player1 != null)
+        {
+            player1Transform = player1.transform;
+        }
     }
 
     void Update()
     {
-        if (ballTransform != null)
+        if (ballTransform != null && player1Transform != null)
         {
-            float direction = ballTransform.position.x - transform.position.x;
-            rb.velocity = new Vector2(Mathf.Sign(direction) * speed, rb.velocity.y);
+            float distanceToPlayer1 = Vector2.Distance(transform.position, player1Transform.position);
 
-            // Kontrola, zda je míč v dosahu kopnutí
-            if (Vector2.Distance(transform.position, ballTransform.position) <= kickRange)
+            // Zastavení AI, pokud je vzdálenost mezi 4 a 6 jednotkami
+            if (distanceToPlayer1 >= 4f && distanceToPlayer1 <= 6f)
             {
-                // Zajištění, že kopnutí proběhne s určitou frekvencí
-                if (Time.time - lastKickTime >= kickCooldown)
-                {
-                    StartCoroutine(KickBall());
-                    lastKickTime = Time.time;
-                }
+                rb.velocity = Vector2.zero; // AI se zastaví
+            }
+            else if (distanceToPlayer1 < 4f)
+            {
+                // AI couvá, pokud je příliš blízko
+                MoveAwayFromPlayer1();
+            }
+            else if (distanceToPlayer1 > 6f)
+            {
+                // AI se pohybuje směrem k míči, pokud je dále než 6 jednotek od Player1
+                MoveTowardsBall();
+            }
+
+            // Zajištění, že kopnutí proběhne s určitou frekvencí
+            if (CanKickBall(distanceToPlayer1))
+            {
+                KickBall();
             }
         }
     }
 
-    void Jump()
+    void MoveAwayFromPlayer1()
     {
-        if (isGrounded)
-        {
-            rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-            isGrounded = false;
-        }
+        float direction = Mathf.Sign(transform.position.x - player1Transform.position.x);
+        rb.velocity = new Vector2(direction * speed, rb.velocity.y);
     }
 
-    // Detekujte kolize s podlahou, abyste aktualizovali stav isGrounded
+    void MoveTowardsBall()
+    {
+        float directionToBall = Mathf.Sign(ballTransform.position.x - transform.position.x);
+        rb.velocity = new Vector2(directionToBall * speed, rb.velocity.y);
+    }
+
+    bool CanKickBall(float distanceToPlayer1)
+    {
+        return Vector2.Distance(transform.position, ballTransform.position) <= 2f && Time.time - lastKickTime >= kickCooldown && distanceToPlayer1 >= 4f;
+    }
+
+    void KickBall()
+    {
+        Vector2 kickDirection = Vector2.up; // Základní směr je nahoru
+        if (ballTransform.position.x > transform.position.x)
+        {
+            kickDirection += Vector2.right;
+        }
+        else
+        {
+            kickDirection += Vector2.left;
+        }
+        kickDirection.Normalize();
+        ballRigidbody.AddForce(kickDirection * kickStrength, ForceMode2D.Impulse);
+        lastKickTime = Time.time;
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Border")) // Ujistěte se, že tag "Border" je přiřazen všem povrchům, po kterých může AI skákat
+        if (collision.gameObject.CompareTag("Border"))
         {
             isGrounded = true;
         }
@@ -70,15 +110,5 @@ public class AI : MonoBehaviour
         {
             isGrounded = false;
         }
-    }
-    IEnumerator KickBall()
-    {
-        if (ballRigidbody != null)
-        {
-            Vector2 kickDirection = (ballRigidbody.position - (Vector2)transform.position).normalized;
-            ballRigidbody.AddForce(kickDirection * kickStrength, ForceMode2D.Impulse);
-        }
-
-        yield return null; // Tento řádek můžete přizpůsobit, pokud potřebujete pauzu nebo další efekty při kopnutí
     }
 }
