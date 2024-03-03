@@ -158,7 +158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 163819570684090056}
   m_Layer: 8
-  m_Name: Brana1
+  m_Name: Brana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

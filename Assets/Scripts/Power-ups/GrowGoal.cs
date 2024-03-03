@@ -19,11 +19,11 @@ public class GrowGoal : MonoBehaviour
     {
         if (col.gameObject.tag == "Player1")
         {
-            StartCoroutine(ResizeGoalTemporarily(brana2, 3.5f, duration, "BorderBrana2", new Vector3(13.89f, 1.91f, 0)));
+            StartCoroutine(ResizeGoalTemporarily(brana2, 3.5f, duration, "BorderBrana2", new Vector3(9.5f, 1.1f, 0))); 
         }
         else if (col.gameObject.tag == "Player2")
         {
-            StartCoroutine(ResizeGoalTemporarily(brana1, 3.5f, duration, "BorderBrana1", new Vector3(-1.98f, 2.1f, 0)));
+            StartCoroutine(ResizeGoalTemporarily(brana1, 3.5f, duration, "BorderBrana1", new Vector3(-6.2f, 0.8f, 0)));
         }
     }
 

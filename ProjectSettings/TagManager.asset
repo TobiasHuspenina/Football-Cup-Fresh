@@ -13,6 +13,10 @@ TagManager:
   - Border
   - BorderBrana1
   - BorderBrana2
+  - SmallBall
+  - Grow-goal
+  - Power
+  - SizeUp
   layers:
   - Default
   - TransparentFX
@@ -23,7 +27,7 @@ TagManager:
   - Player
   - BorderBall
   - Brany
-  - 
+  - PowerUpy
   - 
   - 
   - 

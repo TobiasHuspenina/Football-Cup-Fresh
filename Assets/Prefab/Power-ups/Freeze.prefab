@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5485871484027097521}
   - component: {fileID: 7309373795066432217}
   - component: {fileID: 4523396222639853213}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Freeze
   m_TagString: Freeze
   m_Icon: {fileID: 0}
