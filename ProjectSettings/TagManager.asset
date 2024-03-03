@@ -11,6 +11,8 @@ TagManager:
   - Brana2
   - Player1
   - Border
+  - BorderBrana1
+  - BorderBrana2
   layers:
   - Default
   - TransparentFX
