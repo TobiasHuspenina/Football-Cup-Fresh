@@ -148,5 +148,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brana1: {fileID: 0}
   brana2: {fileID: 0}
-  duration: 10
+  duration: 5
   adjustmentFactor: 0.5
