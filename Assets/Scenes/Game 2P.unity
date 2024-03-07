@@ -1235,6 +1235,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mic
       objectReference: {fileID: 0}
+    - target: {fileID: 2038527160347694019, guid: 55249c80891f23c46b095146684c5604, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5645197343071895632, guid: 55249c80891f23c46b095146684c5604, type: 3}
       propertyPath: m_Material
       value: 
@@ -1341,6 +1345,10 @@ PrefabInstance:
     - target: {fileID: 8784766728915811042, guid: 042977b634b25cc40842df57f10ac5e9, type: 3}
       propertyPath: m_Name
       value: CheckBox2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784766728915811042, guid: 042977b634b25cc40842df57f10ac5e9, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8784766728915811042, guid: 042977b634b25cc40842df57f10ac5e9, type: 3}
       propertyPath: m_TagString
@@ -1617,6 +1625,10 @@ PrefabInstance:
       propertyPath: countdownText
       value: 
       objectReference: {fileID: 1059315246}
+    - target: {fileID: 8784766728915811042, guid: 042977b634b25cc40842df57f10ac5e9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8784766728915811042, guid: 042977b634b25cc40842df57f10ac5e9, type: 3}
       propertyPath: m_TagString
       value: Brana1
