@@ -183,6 +183,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1966380811199810140, guid: 042977b634b25cc40842df57f10ac5e9, type: 3}
+      propertyPath: m_Size.x
+      value: 1.3701212
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966380811199810140, guid: 042977b634b25cc40842df57f10ac5e9, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3861555
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966380811199810140, guid: 042977b634b25cc40842df57f10ac5e9, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0677613
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966380811199810140, guid: 042977b634b25cc40842df57f10ac5e9, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.07908136
+      objectReference: {fileID: 0}
     - target: {fileID: 4860597842241033139, guid: 042977b634b25cc40842df57f10ac5e9, type: 3}
       propertyPath: countdownText
       value: 
@@ -989,11 +1005,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1753421168228748507, guid: 9fafcd73f65ab5148b356fbde748c4ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.72
+      value: 0.76
       objectReference: {fileID: 0}
     - target: {fileID: 1753421168228748507, guid: 9fafcd73f65ab5148b356fbde748c4ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.07
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 1753421168228748507, guid: 9fafcd73f65ab5148b356fbde748c4ee, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1055,11 +1071,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1753421168228748507, guid: 9fafcd73f65ab5148b356fbde748c4ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.81
+      value: -0.82
       objectReference: {fileID: 0}
     - target: {fileID: 1753421168228748507, guid: 9fafcd73f65ab5148b356fbde748c4ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.45
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 1753421168228748507, guid: 9fafcd73f65ab5148b356fbde748c4ee, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1824,6 +1840,22 @@ PrefabInstance:
     - target: {fileID: 163819570684090056, guid: 042977b634b25cc40842df57f10ac5e9, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966380811199810140, guid: 042977b634b25cc40842df57f10ac5e9, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4134531
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966380811199810140, guid: 042977b634b25cc40842df57f10ac5e9, type: 3}
+      propertyPath: m_Size.y
+      value: 1.380539
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966380811199810140, guid: 042977b634b25cc40842df57f10ac5e9, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.08823323
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966380811199810140, guid: 042977b634b25cc40842df57f10ac5e9, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.08188966
       objectReference: {fileID: 0}
     - target: {fileID: 4860597842241033139, guid: 042977b634b25cc40842df57f10ac5e9, type: 3}
       propertyPath: countdownText
