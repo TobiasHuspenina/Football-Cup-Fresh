@@ -4,7 +4,7 @@ using System.Collections;
 public class Grow : MonoBehaviour
 {
     public float GrowTime = 5f;
-    public Vector3 growthFactor = new Vector3(1.5f, 1.5f, 1f); // Faktor, o který se hráč zvětší
+    public Vector3 growthFactor = new Vector3(1.5f, 1.5f, 1f);
 
     private bool isGrowing = false;
 
@@ -27,27 +27,22 @@ public class Grow : MonoBehaviour
 
         player.transform.localScale = newScale;
 
-        // Deaktivace renderování power-upu (zmizí vizuálně)
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
         {
             spriteRenderer.enabled = false;
         }
 
-        // Počkejte určený čas
         yield return new WaitForSeconds(GrowTime);
 
-        // Vraťte hráče do původní velikosti
         player.transform.localScale = originalScale;
 
-        // Aktivace renderování power-upu (objeví se znovu)
         if (spriteRenderer != null)
         {
             spriteRenderer.enabled = true;
         }
 
         isGrowing = false;
-        // Zničení objektu power-upu po aktivaci
         Destroy(gameObject);
     }
 }

@@ -26,7 +26,6 @@ public class Pohyb : MonoBehaviour
     private IEnumerator FreezeCoroutine(float duration)
     {
         isFrozen = true;
-        // Zde můžete přidat efekty nebo změny v grafice pro zmrazeného hráče
         yield return new WaitForSeconds(duration);
         isFrozen = false;
     }
@@ -36,7 +35,6 @@ public class Pohyb : MonoBehaviour
 
          if (isFrozen)
         {
-            // Zmrazení hráče, zabraňuje pohybu
             return;
         }
 
@@ -57,7 +55,6 @@ public class Pohyb : MonoBehaviour
             }
         }
 
-        // Hr�� 2
         if (gameObject.tag == "Player2")
         {
             if (Input.GetKey(KeyCode.LeftArrow))

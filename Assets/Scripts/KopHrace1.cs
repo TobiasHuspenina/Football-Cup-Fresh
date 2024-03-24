@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class KopHrace1 : MonoBehaviour
 {
-    public GameObject mic; // Reference na míč
+    public GameObject mic;
     private float distance;
-    private Rigidbody2D micRigidbody; // Rigidbody míče pro aplikaci síly
+    private Rigidbody2D micRigidbody;
     public float ShootPower = 18;
 
     public Direction currentDirection = Direction.Right; // Výchozí směr
@@ -43,22 +43,21 @@ public class KopHrace1 : MonoBehaviour
 
     void KickBall()
     {
-        Vector2 kickDirection = Vector2.up; // Základní směr je nahoru
+        Vector2 kickDirection = Vector2.up; 
 
-        // Upravte směr podle toho, zda je hráč natočený doleva nebo doprava
         if (currentDirection == Direction.Right)
         {
-            kickDirection += Vector2.right; // Přidáme vektor směrem doprava
+            kickDirection += Vector2.right; 
         }
         else if (currentDirection == Direction.Left)
         {
-            kickDirection += Vector2.left; // Přidáme vektor směrem doleva
+            kickDirection += Vector2.left;
         }
 
-        kickDirection.Normalize(); // Normalizujeme vektor pro konzistentní velikost síly
-        if (micRigidbody != null) // Zkontrolujte, zda má míč Rigidbody2D
+        kickDirection.Normalize();
+        if (micRigidbody != null)
         {
-            micRigidbody.AddForce(kickDirection * ShootPower, ForceMode2D.Impulse); // Aplikujeme sílu
+            micRigidbody.AddForce(kickDirection * ShootPower, ForceMode2D.Impulse);
         }
     }
 

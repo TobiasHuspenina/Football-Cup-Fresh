@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject[] powerUps; // Pole prefabů powerUpů
-    public Transform spawnLocation; // Umístění spawnu
+    public GameObject[] powerUps; 
+    public Transform spawnLocation; 
 
-    private float spawnDelay = 10f; // Čas mezi spawnováními
+    private float spawnDelay = 10f;
     private float nextSpawnTime;
 
     void Start()
@@ -25,9 +25,7 @@ public class Spawner : MonoBehaviour
 
     void SpawnPowerUp()
     {
-        // Náhodný výběr powerUpu
         int index = Random.Range(0, powerUps.Length);
-        // Spawnování powerUpu
         Instantiate(powerUps[index], spawnLocation.position, Quaternion.identity);
     }
 }

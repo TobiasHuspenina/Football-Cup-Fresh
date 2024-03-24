@@ -33,15 +33,15 @@ public class Cas : MonoBehaviour
              int num1 = int.Parse(away.text);//Player2
              int num2 = int.Parse(home.text);//Player1
         
-        if (num1 > num2) //Player2 vyhrál
+        if (num1 > num2)
         {
             SceneManager.LoadScene(4);
         }
-        else if (num2 > num1) //Player1 vyhrál
+        else if (num2 > num1)
         {
             SceneManager.LoadScene(3);
         }
-        else //Remíza
+        else
         {
             SceneManager.LoadScene(5);
          }

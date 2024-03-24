@@ -5,7 +5,6 @@ using UnityEngine;
 public class AI : MonoBehaviour
 {
     public float speed = 7f;
-    public float jumpForce = 10f;
     public Rigidbody2D ballRigidbody;
     public float kickStrength = 18f;
     private Rigidbody2D rb;
@@ -25,7 +24,6 @@ public class AI : MonoBehaviour
             ballRigidbody = ball.GetComponent<Rigidbody2D>();
         }
 
-        // Najdeme objekt Player1 a uložíme jeho transform
         GameObject player1 = GameObject.FindGameObjectWithTag("Player1");
         if (player1 != null)
         {
@@ -39,23 +37,29 @@ public class AI : MonoBehaviour
         {
             float distanceToPlayer1 = Vector2.Distance(transform.position, player1Transform.position);
 
-            // Zastavení AI, pokud je vzdálenost mezi 4 a 6 jednotkami
-            if (distanceToPlayer1 >= 4f && distanceToPlayer1 <= 6f)
+            bool isPlayer1OnOpponentsHalf = player1Transform.position.x > 0;
+
+            if (isPlayer1OnOpponentsHalf)
             {
-                rb.velocity = Vector2.zero; // AI se zastaví
-            }
-            else if (distanceToPlayer1 < 4f)
-            {
-                // AI couvá, pokud je příliš blízko
-                MoveAwayFromPlayer1();
-            }
-            else if (distanceToPlayer1 > 6f)
-            {
-                // AI se pohybuje směrem k míči, pokud je dále než 6 jednotek od Player1
                 MoveTowardsBall();
             }
+            else
+            {
+                // Zastavení AI, pokud je vzdálenost mezi 4 a 6 jednotkami a hráč není na soupeřově půlce
+                if (distanceToPlayer1 >= 4f && distanceToPlayer1 <= 6f)
+                {
+                    rb.velocity = Vector2.zero;
+                }
+                else if (distanceToPlayer1 < 4f)
+                {
+                    MoveAwayFromPlayer1();
+                }
+                else if (distanceToPlayer1 > 6f)
+                {
+                    MoveTowardsBall();
+                }
+            }
 
-            // Zajištění, že kopnutí proběhne s určitou frekvencí
             if (CanKickBall(distanceToPlayer1))
             {
                 KickBall();
@@ -82,18 +86,10 @@ public class AI : MonoBehaviour
 
     void KickBall()
     {
-        Vector2 kickDirection = Vector2.up; // Základní směr je nahoru
-        if (ballTransform.position.x > transform.position.x)
-        {
-            kickDirection += Vector2.right;
-        }
-        else
-        {
-            kickDirection += Vector2.left;
-        }
-        kickDirection.Normalize();
-        ballRigidbody.AddForce(kickDirection * kickStrength, ForceMode2D.Impulse);
-        lastKickTime = Time.time;
+    Vector2 kickDirection = Vector2.up + Vector2.left;
+    kickDirection.Normalize();
+    ballRigidbody.AddForce(kickDirection * kickStrength, ForceMode2D.Impulse);
+    lastKickTime = Time.time;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
